@@ -45,7 +45,9 @@ jobs:
 
       # gradle build
       - name: Build with Gradle
-        run: ./gradlew build bootJar
+        run: |
+          chmod -x ./gradlew
+          ./gradlew build bootJar
 
       # make zip file
       - name: Make zip file
