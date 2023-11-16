@@ -47,6 +47,7 @@ jobs:
       - name: Build with Gradle
         run: |
           pwd
+          ls
           chmod -x ./gradlew
           ./gradlew build bootJar
 
