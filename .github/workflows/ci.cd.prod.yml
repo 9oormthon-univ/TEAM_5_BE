@@ -46,8 +46,7 @@ jobs:
       # gradle build
       - name: Build with Gradle
         run: |
-          cd ..
-          ls -a
+          cd ~/TEAM_5_BE
           chmod -x ./gradlew
           ./gradlew build bootJar
 
