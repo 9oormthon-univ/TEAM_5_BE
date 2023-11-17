@@ -20,7 +20,7 @@ public class QuestionService {
                 .build();
         Question newQuestion = this.questionRepository.save(question);
         // validation
-        ReadingBook readingBook = readingBookRepository.findById(questionDto.getBookClubId()).orElseThrow(() -> new RuntimeException("존재하지 않는 모임입니다."));
+        ReadingBook readingBook = readingBookRepository.findById(questionDto.getReadingBookId()).orElseThrow(() -> new RuntimeException("존재하지 않는 책입니다."));
 
         return QuestionResponse.toDto(newQuestion, readingBook);
     }
