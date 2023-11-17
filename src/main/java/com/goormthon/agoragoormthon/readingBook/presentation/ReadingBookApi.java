@@ -20,8 +20,7 @@ public class ReadingBookApi {
     private final ReadingBookService readingBookService;
 
     @PostMapping("/save")
-    public ResponseEntity<Void> addReadingBook(@RequestBody ReadingBookRequest request) {
-
+    public ResponseEntity<Void> saveReadingBook(@RequestBody ReadingBookRequest request) {
         readingBookService.saveReadingBook(request);
         return ResponseDto.noContent();
 
