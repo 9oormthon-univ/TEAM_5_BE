@@ -1,19 +1,18 @@
 version: 0.0
 os: linux
-# destination에 아티팩트가 unzip된 결과가 생성될 디렉토리명을 넣어준다.
+
 files:
   - source: /
-    destination: /home/ubuntu/app/TEST_5_BE
-    overwrite: yes
+    destination: /home/ubuntu/build  # 인스턴스에서 파일이 저장될 위치
+
 permissions:
-  - object: /home/ubuntu/app/TEST_5_BE
-#    pattern: "**"
+  - object: /
+    pattern: "**"
     owner: ubuntu
     group: ubuntu
-    mode: 755
 
 hooks:
-  AfterInstall:
+  ApplicationStart:
     - location: deploy.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
