@@ -22,4 +22,11 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
+    public List<BookListDto> searchBooks(String keyword){
+        return bookRepository.searchBooks(keyword).stream()
+                .map(book -> new BookListDto(book.getId(), book.getTitle(), book.getAuthors(), book.getImgUrl()))
+                .collect(Collectors.toList());
+    }
+
 }

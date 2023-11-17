@@ -7,4 +7,6 @@ import java.util.List;
 public interface BookCustomRepository {
 
     List<Book> findRandomBooks();
+
+    List<Book> searchBooks(String keyword);
 }
