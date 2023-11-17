@@ -1,6 +1,6 @@
 HELP.md
-application.yml
-application-prod.yml
+deploy.sh
+.yml
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -38,3 +38,5 @@ out/
 ### VS Code ###
 .vscode/
 *.yml
+*.sh
+src/main/resources/deploy.sh
