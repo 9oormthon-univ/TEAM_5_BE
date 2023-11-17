@@ -7,13 +7,13 @@ files:
     overwrite: yes
 permissions:
   - object: /home/ubuntu/TEST_5_BE
-    pattern: "**"
+#    pattern: "**"
     owner: ubuntu
     group: ubuntu
     mode: 755
 
 hooks:
   AfterInstall:
-    - location: /scripts/deploy.sh
+    - location: deploy.sh
       timeout: 60
       runas: root
