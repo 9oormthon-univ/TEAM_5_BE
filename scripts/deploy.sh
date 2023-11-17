@@ -1,5 +1,5 @@
 #!/bin/bash
-BUILD_PATH=$(ls /home/ubuntu/build/*.jar)
+BUILD_PATH=$(ls /home/ubuntu/TEAM_5_BE/*.jar)
 JAR_NAME=$(basename $BUILD_PATH)
 echo "> build 파일명: $JAR_NAME"
 
