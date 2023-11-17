@@ -1,4 +1,4 @@
-package com.goormthon.agoragoormthon.question;
+package com.goormthon.agoragoormthon.question.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -15,6 +15,10 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "question", nullable = false)
-    private String question;
+    @Column(name = "content", nullable = false)
+    private String content;
+
+    public void updateContent(String content) {
+        this.content = content;
+    }
 }
