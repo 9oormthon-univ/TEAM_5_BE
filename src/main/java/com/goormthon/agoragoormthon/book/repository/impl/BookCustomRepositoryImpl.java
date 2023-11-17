@@ -3,6 +3,7 @@ package com.goormthon.agoragoormthon.book.repository.impl;
 import com.goormthon.agoragoormthon.book.domain.Book;
 import com.goormthon.agoragoormthon.book.repository.BookCustomRepository;
 import com.goormthon.agoragoormthon.book.repository.BookRepository;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,22 @@ public class BookCustomRepositoryImpl implements BookCustomRepository {
 
         Collections.shuffle(books, new Random());
         return books.subList(0, Math.min(10, books.size()));
+    }
+
+    @Override
+    public List<Book> searchBooks(String keyword){
+
+        return queryFactory
+                .selectFrom(book)
+                .where(titleContains(keyword).or(authorContains(keyword)))
+                .fetch();
+    }
+    private BooleanExpression titleContains(String title) {
+        return title != null ? book.title.contains(title) : null;
+    }
+
+    private BooleanExpression authorContains(String author) {
+        return author != null ? book.authors.contains(author) : null;
     }
 
 }
