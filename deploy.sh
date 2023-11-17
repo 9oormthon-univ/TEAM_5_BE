@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPOSITORY=/home/ubuntu/TEST_5_BE
+REPOSITORY=/home/ubuntu/app/TEST_5_BE
 cd $REPOSITORY
 
 APP_NAME=demo
