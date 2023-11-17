@@ -1,6 +1,6 @@
 HELP.md
-deploy.sh
-.yml
+application.yml
+application-prod.yml
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
