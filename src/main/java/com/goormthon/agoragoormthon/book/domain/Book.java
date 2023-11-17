@@ -18,14 +18,11 @@ public class Book {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "author", nullable = false)
-    private String author;
+    @Column(name = "authors", nullable = false)
+    private String authors;
 
     @Column(name = "publisher", nullable = false)
     private String publisher;
-
-    @Column(name = "pages", nullable = false)
-    private String pages;
 
     @Column(name = "img_url", nullable = false)
     private String imgUrl;
