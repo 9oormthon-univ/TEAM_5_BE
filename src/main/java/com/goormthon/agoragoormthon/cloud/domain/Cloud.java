@@ -1,4 +1,4 @@
-package com.goormthon.agoragoormthon.cloud;
+package com.goormthon.agoragoormthon.cloud.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,10 +16,9 @@ public class Cloud {
     private Long id;
 
     @Column(name = "book_club", nullable = false)
-    private Long book_club_id;
+    private Long bookClubId;
 
     @Column(name = "style", nullable = false )
     private String style;
-
 
 }
