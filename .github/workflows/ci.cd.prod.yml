@@ -72,5 +72,5 @@ jobs:
       - name: Code Deploy
         run: aws deploy create-deployment --application-name agora
           --deployment-config-name CodeDeployDefault.OneAtATime
-          --deployment-group-name production
+          --deployment-group-name agora-deployment-group
           --s3-location bucket=${{ secrets.S3_BUCKET_NAME }},bundleType=zip,key=deploy/$GITHUB_SHA.zip
