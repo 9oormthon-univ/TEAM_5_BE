@@ -17,8 +17,7 @@ public class CloudApi {
         Cloud cloud = cloudService.createCloud(bookClubId);
         return ResponseEntity.ok(cloud);
     }
-
-    @PatchMapping("/changes")
+    @PatchMapping("/change")
     public ResponseEntity<Cloud> updateCloudStyle(@RequestParam Long id, @RequestParam String style) {
         Cloud updatedCloud = cloudService.updateCloudStyle(id, style);
         return ResponseEntity.ok(updatedCloud);
