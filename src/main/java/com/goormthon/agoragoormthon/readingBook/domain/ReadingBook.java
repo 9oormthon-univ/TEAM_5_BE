@@ -1,4 +1,4 @@
-package com.goormthon.agoragoormthon.readingBook;
+package com.goormthon.agoragoormthon.readingBook.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,10 +16,10 @@ public class ReadingBook {
     private Long id;
 
     @Column(name = "book_club", nullable = false)
-    private Long book_club_id;
+    private Long bookClubId;
 
     @Column(name = "book_id", nullable = false)
-    private Long book_id;
+    private Long bookId;
 
 
 }
