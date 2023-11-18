@@ -1,6 +1,7 @@
 package com.goormthon.agoragoormthon.book.application;
 
 import com.goormthon.agoragoormthon.book.dto.BookListDto;
+import com.goormthon.agoragoormthon.book.dto.BookSearchDto;
 import com.goormthon.agoragoormthon.book.repository.BookRepository;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -22,16 +23,24 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
+//    @Transactional(readOnly = true)
+//    public List<BookListDto> searchBooks(String keyword){
+//        return bookRepository.searchBooks(keyword).stream()
+//                .map(book -> new BookListDto(book.getId(), book.getTitle(), book.getAuthors(), book.getImgUrl()))
+//                .collect(Collectors.toList());
+//    }
+
     @Transactional(readOnly = true)
-    public List<BookListDto> searchBooks(String keyword){
+    public List<BookSearchDto> searchBooks(String keyword) {
         return bookRepository.searchBooks(keyword).stream()
-                .map(book -> new BookListDto(book.getId(), book.getTitle(), book.getAuthors(), book.getImgUrl()))
+                .map(book -> new BookSearchDto(
+                        book.getId(),
+                        book.getTitle(),
+                        book.getAuthors(),
+                        book.getPublisher(),
+                        book.getImgUrl()))
                 .collect(Collectors.toList());
     }
-
-
-
-
 
 
 }

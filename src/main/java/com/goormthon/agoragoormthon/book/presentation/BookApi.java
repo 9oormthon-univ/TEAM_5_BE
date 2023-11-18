@@ -4,6 +4,7 @@ package com.goormthon.agoragoormthon.book.presentation;
 import com.goormthon.agoragoormthon.book.application.BookService;
 import com.goormthon.agoragoormthon.book.domain.Book;
 import com.goormthon.agoragoormthon.book.dto.BookListDto;
+import com.goormthon.agoragoormthon.book.dto.BookSearchDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +27,8 @@ public class BookApi {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<BookListDto>> searchBooks(String keyword){
-        List<BookListDto> books = bookService.searchBooks(keyword);
+    public ResponseEntity<List<BookSearchDto>> searchBooks(String keyword){
+        List<BookSearchDto> books = bookService.searchBooks(keyword);
         return ResponseEntity.ok(books);
     }
 

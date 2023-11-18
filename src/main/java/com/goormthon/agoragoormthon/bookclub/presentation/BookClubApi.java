@@ -35,7 +35,5 @@ public class BookClubApi {
         List<BookClub> bookClubs = bookClubService.getAllBookClubs();
         return ResponseEntity.ok(bookClubs);
     }
-
-
 }
 
