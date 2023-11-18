@@ -1,4 +1,4 @@
-package com.goormthon.agoragoormthon.question.domain;
+package com.goormthon.agoragoormthon.question.domain.dto;
 
 import lombok.*;
 
