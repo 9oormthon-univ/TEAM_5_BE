@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
+@Setter
 @Builder
 @Entity
 @EqualsAndHashCode
@@ -19,6 +20,6 @@ public class Cloud {
     private Long bookClubId;
 
     @Column(name = "style", nullable = false )
-    private String style;
+    private int style;
 
 }
