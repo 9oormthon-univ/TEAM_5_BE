@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class QuestionPatchRequest {
-    Long questionId;
+//    Long questionId;
     Long readingBookId;
     String content;
 }

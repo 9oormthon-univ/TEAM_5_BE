@@ -15,10 +15,10 @@ public class QuestionResponse {
     Long readingBookId;
     String content;
 
-    public static QuestionResponse toDto(Question question, ReadingBook readingBook) {
+    public static QuestionResponse toDto(Question question) {
         return QuestionResponse.builder()
                 .questionId(question.getId())
-                .readingBookId(readingBook.getId())
+                .readingBookId(question.getId())
                 .content(question.getContent())
                 .build();
     }
