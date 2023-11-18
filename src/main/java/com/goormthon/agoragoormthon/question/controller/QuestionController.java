@@ -1,13 +1,16 @@
 package com.goormthon.agoragoormthon.question.controller;
 
 import com.goormthon.agoragoormthon.global.response.ResponseType;
-import com.goormthon.agoragoormthon.question.domain.QuestionDeleteResponse;
-import com.goormthon.agoragoormthon.question.domain.QuestionPatchRequest;
-import com.goormthon.agoragoormthon.question.domain.QuestionWriteRequest;
-import com.goormthon.agoragoormthon.question.domain.QuestionResponse;
+import com.goormthon.agoragoormthon.question.domain.dto.QuestionDeleteResponse;
+import com.goormthon.agoragoormthon.question.domain.dto.QuestionPatchRequest;
+import com.goormthon.agoragoormthon.question.domain.dto.QuestionWriteRequest;
+import com.goormthon.agoragoormthon.question.domain.dto.QuestionResponse;
+import com.goormthon.agoragoormthon.question.domain.dto.QuestionInfoResponse;
 import com.goormthon.agoragoormthon.question.service.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -28,5 +31,10 @@ public class QuestionController {
     @DeleteMapping("/{questionId}")
     public ResponseType<QuestionDeleteResponse> deleteQuestion(@PathVariable Long questionId) {
         return ResponseType.createSuccessWithData(questionService.deleteQuestion(questionId));
+    }
+
+    @GetMapping("/{readingBookId}")
+    public ResponseType<List<QuestionInfoResponse>> getQuestionList(@PathVariable("readingBookId") Long readingBookId) {
+        return ResponseType.createSuccessWithData(questionService.getQuestionList(readingBookId));
     }
 }

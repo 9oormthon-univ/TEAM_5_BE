@@ -1,6 +1,6 @@
-package com.goormthon.agoragoormthon.question.domain;
+package com.goormthon.agoragoormthon.question.domain.dto;
 
-import com.goormthon.agoragoormthon.readingBook.domain.ReadingBook;
+import com.goormthon.agoragoormthon.question.domain.domain.Question;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
