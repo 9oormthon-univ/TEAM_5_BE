@@ -33,8 +33,8 @@ public class QuestionController {
         return ResponseType.createSuccessWithData(questionService.deleteQuestion(questionId));
     }
 
-    @GetMapping("/{readingBookId}")
-    public ResponseType<List<QuestionInfoResponse>> getQuestionList(@PathVariable("readingBookId") Long readingBookId) {
+    @GetMapping("/list")
+    public ResponseType<List<QuestionInfoResponse>> getQuestionList(@RequestParam("readingBookId") Long readingBookId) {
         return ResponseType.createSuccessWithData(questionService.getQuestionList(readingBookId));
     }
 }
