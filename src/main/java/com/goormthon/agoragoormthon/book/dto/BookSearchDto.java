@@ -13,8 +13,9 @@ public class BookSearchDto {
     private Long id;
     private String title;
     private String authors;
-    private String imgUrl;
     private String publisher;
+    private String imgUrl;
+
 
 }
 
