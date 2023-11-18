@@ -5,14 +5,14 @@ files:
   - source: /
     destination: /home/ubuntu/build/  # 인스턴스에서 파일이 저장될 위치
 
-#permissions:
-#  - object: /
-#    pattern: "**"
-#    owner: ubuntu
-#    group: ubuntu
+permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
 
-#hooks:
-#  ApplicationStart:
-#    - location: deploy.sh
-#      timeout: 60
-#      runas: ubuntu
+hooks:
+  ApplicationStart:
+    - location: deploy.sh
+      timeout: 60
+      runas: ubuntu
