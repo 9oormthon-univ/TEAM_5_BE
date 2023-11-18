@@ -1,13 +1,12 @@
 package com.goormthon.agoragoormthon.bookclub.presentation;
 
 import com.goormthon.agoragoormthon.bookclub.application.BookClubService;
+import com.goormthon.agoragoormthon.bookclub.domain.BookClub;
 import com.goormthon.agoragoormthon.bookclub.dto.BookClubInfo;
+import com.goormthon.agoragoormthon.bookclub.dto.request.BookClubCreateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -23,6 +22,11 @@ public class BookClubApi {
         return ResponseEntity.ok(combinedResponse);
     }
 
+    @PostMapping("/make")
+    public ResponseEntity<BookClub> createBookClub(@RequestBody BookClubCreateDto bookClubCreateDto) {
+        BookClub bookClub = bookClubService.createBookClub(bookClubCreateDto);
+        return ResponseEntity.ok(bookClub);
+    }
 
 }
 

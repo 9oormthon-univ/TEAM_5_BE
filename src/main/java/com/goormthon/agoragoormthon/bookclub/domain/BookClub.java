@@ -18,4 +18,7 @@ public class BookClub {
     @Column(name = "title", nullable = false)
     private String title;
 
+    @Column(name = "overview", nullable = false)
+    private String overview;
+
 }
