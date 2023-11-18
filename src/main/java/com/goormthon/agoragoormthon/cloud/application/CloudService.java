@@ -14,13 +14,13 @@ public class CloudService {
     public Cloud createCloud(Long bookClubId) {
         Cloud cloud = Cloud.builder()
                 .bookClubId(bookClubId)
-                .style("1")
+                .style(1)
                 .build();
 
         return cloudRepository.save(cloud);
     }
 
-    public Cloud updateCloudStyle(Long id, String newStyle) {
+    public Cloud updateCloudStyle(Long id, int newStyle) {
         Cloud cloud = cloudRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cloud not found with id: " + id));
         cloud.setStyle(newStyle);

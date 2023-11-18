@@ -18,7 +18,7 @@ public class CloudApi {
         return ResponseEntity.ok(cloud);
     }
     @PatchMapping("/change")
-    public ResponseEntity<Cloud> updateCloudStyle(@RequestParam Long id, @RequestParam String style) {
+    public ResponseEntity<Cloud> updateCloudStyle(@RequestParam Long id, @RequestParam int style) {
         Cloud updatedCloud = cloudService.updateCloudStyle(id, style);
         return ResponseEntity.ok(updatedCloud);
     }
