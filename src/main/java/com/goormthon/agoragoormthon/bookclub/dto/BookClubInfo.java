@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BookClubInfo {
 
+    private String title;
     private List<BookListDto> books;
     private List<CloudResponseDto> clouds;
 
