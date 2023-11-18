@@ -8,8 +8,8 @@ import com.goormthon.agoragoormthon.answer.domain.entity.CountAnswer;
 import com.goormthon.agoragoormthon.answer.domain.entity.CountAnswerRepository;
 import com.goormthon.agoragoormthon.memeber.domain.Member;
 import com.goormthon.agoragoormthon.memeber.domain.MemberRepository;
-import com.goormthon.agoragoormthon.question.domain.Question;
-import com.goormthon.agoragoormthon.question.domain.QuestionRepository;
+import com.goormthon.agoragoormthon.question.domain.domain.Question;
+import com.goormthon.agoragoormthon.question.domain.domain.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

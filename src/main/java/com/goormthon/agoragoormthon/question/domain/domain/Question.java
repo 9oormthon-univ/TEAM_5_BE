@@ -1,4 +1,4 @@
-package com.goormthon.agoragoormthon.question.domain;
+package com.goormthon.agoragoormthon.question.domain.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

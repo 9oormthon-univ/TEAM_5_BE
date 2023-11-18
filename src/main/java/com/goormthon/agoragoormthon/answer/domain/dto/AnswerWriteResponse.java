@@ -3,7 +3,7 @@ package com.goormthon.agoragoormthon.answer.domain.dto;
 import com.goormthon.agoragoormthon.answer.domain.entity.Answer;
 import com.goormthon.agoragoormthon.answer.domain.entity.CountAnswer;
 import com.goormthon.agoragoormthon.memeber.domain.Member;
-import com.goormthon.agoragoormthon.question.domain.Question;
+import com.goormthon.agoragoormthon.question.domain.domain.Question;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
