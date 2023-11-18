@@ -30,6 +30,7 @@ public class CloudApi {
     public ResponseEntity<List<CloudResponseDto>> getCloudsByBookClubId(@RequestParam Long bookClubId) {
         List<CloudResponseDto> cloudDtos = cloudService.getCloudsByBookClubId(bookClubId);
         return ResponseEntity.ok(cloudDtos);
+
     }
 
 }
