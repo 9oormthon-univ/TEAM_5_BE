@@ -16,13 +16,12 @@ public class QuestionService {
 
     public QuestionResponse saveQuestion(QuestionWriteRequest questionDto) {
         Question question = Question.builder()
+                .readingBookId(questionDto.getReadingBookId())
                 .content(questionDto.getContent())
                 .build();
         Question newQuestion = this.questionRepository.save(question);
-        // validation
-        ReadingBook readingBook = readingBookRepository.findById(questionDto.getReadingBookId()).orElseThrow(() -> new RuntimeException("존재하지 않는 책입니다."));
 
-        return QuestionResponse.toDto(newQuestion, readingBook);
+        return QuestionResponse.toDto(newQuestion);
     }
 
     @Transactional
@@ -33,7 +32,7 @@ public class QuestionService {
 
         question.updateContent(patchRequest.getContent());
 
-    return QuestionResponse.toDto(question, readingBook);
+    return QuestionResponse.toDto(question);
     }
 
     public QuestionDeleteResponse deleteQuestion(Long questionId) {
