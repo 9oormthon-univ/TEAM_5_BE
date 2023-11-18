@@ -43,5 +43,9 @@ public class BookClubService {
         return bookClubRepository.save(bookClub);
     }
 
+    public List<BookClub> getAllBookClubs() {
+        return bookClubRepository.findAll();
+    }
+
 
 }
