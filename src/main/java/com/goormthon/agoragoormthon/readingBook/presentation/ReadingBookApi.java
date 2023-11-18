@@ -25,9 +25,5 @@ public class ReadingBookApi {
         return ResponseDto.noContent();
 
     }
-    @GetMapping("/{bookClubId}/books")
-    public List<BookListDto> getBooksByBookClubId(@PathVariable Long bookClubId) {
-        return readingBookService.getBooksByBookClubId(bookClubId);
-    }
 
 }
