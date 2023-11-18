@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("api/v1/bookClubs")
@@ -27,6 +29,13 @@ public class BookClubApi {
         BookClub bookClub = bookClubService.createBookClub(bookClubCreateDto);
         return ResponseEntity.ok(bookClub);
     }
+
+    @GetMapping
+    public ResponseEntity<List<BookClub>> getAllBookClubs() {
+        List<BookClub> bookClubs = bookClubService.getAllBookClubs();
+        return ResponseEntity.ok(bookClubs);
+    }
+
 
 }
 
