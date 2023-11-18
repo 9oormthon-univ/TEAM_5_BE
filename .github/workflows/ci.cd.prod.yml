@@ -69,7 +69,7 @@ jobs:
 
       # CodeDeploy에 배포 요청
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name agora-codedeploy
+        run: aws deploy create-deployment --application-name 1118-12-agora
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name 1118-12-agora
           --s3-location bucket=${{ secrets.S3_BUCKET_NAME }},bundleType=zip,key=deploy/$GITHUB_SHA.zip
